@@ -23,7 +23,7 @@ public class ExcelUti {
             val = ws.getRow(r).getCell(c).getStringCellValue();
             //ws.getRow(1).getCell(2).setCellValue("Pass");
             ws.getRow(1).createCell(2).setCellValue("Pass");
-           // fi.close();
+           /// fi.close();
             FileOutputStream fo = new FileOutputStream(fe);
             wb.write(fo);
             fo.close();

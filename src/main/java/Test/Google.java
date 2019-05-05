@@ -19,7 +19,7 @@ public class Google {
             String url = exl.getvalueStr(1,1);
             obj.get(url);
             //Logger Log = LogManager.getLogger(Google.class);
-           // Log.info("info-Browser launched");
+           /// Log.info("info-Browser launched");
             obj.quit();
         }
         else {
