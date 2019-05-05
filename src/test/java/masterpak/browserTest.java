@@ -9,7 +9,7 @@ public class browserTest {
 
 
     @Test
-    @Parameters("URL")
+    @Parameters({"URL"})
     public void browserOpen(String url){
         String root = System.getProperty("user.dir");
         System. setProperty("webdriver.chrome.driver", root +"\\Driver\\chromedriver.exe");
