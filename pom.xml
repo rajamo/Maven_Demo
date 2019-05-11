@@ -46,12 +46,12 @@
             <version>3.0.0-M3</version>
             <type>pom</type>
         </dependency>
-        <dependency>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <type>maven-plugin</type>
-        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-compiler-plugin</artifactId>-->
+        <!--<version>3.8.1</version>-->
+        <!--<type>maven-plugin</type>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
@@ -60,18 +60,20 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
+                <executions>
+                <execution>
                 <configuration>
-                    <systemPropertyVariables>
-                        <property>
-                            <name> URL </name>
-                            <value>${web}</value>
-                        </property>
-                    </systemPropertyVariables>
+                  <parallel>classes</parallel>
+                    <threadCount>2</threadCount>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-
                 </configuration>
+                    <goals>
+                        <goal>test</goal>
+                    </goals>
+                </execution>
+            </executions>
             </plugin>
         </plugins>
     </build>
